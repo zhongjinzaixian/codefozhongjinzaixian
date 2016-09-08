@@ -30,7 +30,6 @@ import java.util.ArrayList;
  */
 public class MainActivity extends MyBaseActivity {
 
-    //第一次
     @ViewInject(R.id.homeLayout)
     private AutoRelativeLayout homeLayout;
     @ViewInject(R.id.duobaoLayout)
