@@ -36,6 +36,9 @@ dependencies {
     compile project(':magicindicator')
     //compile 'com.android.support:appcompat-v7:24.2.0'
     compile 'com.android.support:recyclerview-v7:24.2.0'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.zhy:autolayout:1.4.3'
     compile 'com.android.support:support-v4:24.2.0'
+    compile group: 'com.github.bumptech.glide', name: 'glide', version: '3.7.0'
+
 }
