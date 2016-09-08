@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
+
+    defaultConfig {
+        applicationId "com.cnjy99.cyq"
+        minSdkVersion 19
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile(name: 'redpacketlibrary', ext: 'aar')
+    compile files('libs/xUtils-2.6.14.jar')
+    compile files('libs/gson-2.2.4.jar')
+    compile files('libs/alipaySDK-20150602.jar')
+    compile files('libs/EventBus.jar')
+    compile project(':magicindicator')
+    //compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.zhy:autolayout:1.4.3'
+    compile 'com.android.support:support-v4:24.2.0'
+}

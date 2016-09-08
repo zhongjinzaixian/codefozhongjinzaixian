@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_title">
+        <item>极藏社区</item>
+        <item>原创设计</item>
+        <item>极藏专访</item>
+        <item>分类大全</item>
+    </string-array>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="105px"
+        android:background="@drawable/nav_background"
+        app:contentInsetLeft="0dp">
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="24px"
+            android:id="@+id/returnImageView"
+            android:layout_width="30px"
+            android:layout_height="57px"
+            android:background="@drawable/nav_return"/>
+        <TextView
+            android:textColor="@color/black"
+            android:id="@+id/titleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp" />
+    </android.support.v7.widget.Toolbar>
+</com.zhy.autolayout.AutoRelativeLayout>

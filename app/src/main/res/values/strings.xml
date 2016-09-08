@@ -1,0 +1,109 @@
+<resources>
+    <string name="app_name">CangCircle</string>
+    <string name="error_WX_uninstall">没有安装微信</string>
+    <string name="error_WX_pay_unsupport">当前版本微信不支持支付功能</string>
+
+    <!--登录-->
+    <string name="login_phone_hint">请输入手机号/通行证</string>
+    <string name="login_pwd_hint">请输入密码</string>
+    <string name="login_forget_hint">忘记密码</string>
+    <string name="login_register_hint">注册</string>
+    <string name="login_login_hint">登录</string>
+    <string name="login_company_hint">威客工作室</string>
+    <string name="login_phone_toast">手机号不能为空,请输入手机号</string>
+    <string name="login_phone_format_toast">手机号格式不对,请输入正确的手机号</string>
+    <string name="login_pwd_toast">密码不能为空,请输入密码</string>
+
+    <!--注册-->
+    <string name="register_phone_hint">请输入手机号</string>
+    <string name="register_verify_hint">手机验证码</string>
+    <string name="register_send_verify_hint">发送验证码</string>
+    <string name="register_pwd_hint">请输入6-16位字母数字组合密码</string>
+    <string name="register_read_agree_hint">已阅读并同意</string>
+    <string name="register_agreement_hint">XX协议</string>
+    <string name="register_query_hint">确定</string>
+    <string name="register_verify_later_hint">秒后可重新发送</string>
+    <string name="register_verify_second_hint">秒</string>
+
+    <!--忘记密码-->
+    <string name="forget_pwd_hint">找回密码</string>
+    <string name="forget_phone_hint">请输入绑定的手机号</string>
+    <string name="forget_verify_hint">填写验证码</string>
+    <string name="forget_next_hint">下一步</string>
+    <string name="forget_verify_toast">验证码不能为空,请填写验证码</string>
+
+    <!--修改密码-->
+    <string name="change_pwd_hint">修改密码</string>
+    <string name="change_old_pwd_hint">旧密码:</string>
+    <string name="change_new_pwd_hint">新密码:</string>
+    <string name="change_query_pwd_hint">确认新密码:</string>
+    <string name="change_edit_verify_hint">请输入短信验证码</string>
+    <string name="change_query_btn">确认修改</string>
+    <string name="change_get_verify_hint">获取验证码</string>
+    <string name="change_old_pwd_toast">旧密码不能为空,请输入旧密码</string>
+    <string name="change_new_pwd_toast">新密码不能为空,请输入新密码</string>
+    <string name="change_query_pwd_toast">确认新密码不能为空,请输入确认新密码</string>
+    <string name="change_query_pwd_different_toast">两次密码输入不一致,请重新输入</string>
+
+    <!--我的-->
+    <string name="my_my_title">我的</string>
+    <string name="my_praised">被赞</string>
+    <string name="my_devide">｜</string>
+    <string name="my_attention">关注</string>
+    <string name="my_collect">收藏</string>
+    <string name="my_area">地区</string>
+    <string name="my_grade">等级</string>
+    <string name="my_post">发帖</string>
+    <string name="my_market">集市</string>
+    <string name="my_snatch">夺宝</string>
+    <string name="my_gift">积分换礼</string>
+
+    <!--设置-->
+    <string name="settings_title">设置</string>
+    <string name="settings_compile_user_info">编辑个人资料</string>
+    <string name="settings_modify_password">修改密码</string>
+    <string name="settings_modify_phone">修改手机号</string>
+    <string name="settings_wipe_cache">清除缓存</string>
+    <string name="settings_logout">退出登录</string>
+    <string name="settings_cache_unit">MB</string>
+
+    <!--修改手机号-->
+    <string name="changephone_title">修改手机号 </string>
+    <string name="changephone_bind_hint">已绑定手机 %s</string>
+    <string name="changephone_new_phone_hint">请输入新手机号码</string>
+    <string name="changephone_phone_hint">****</string>
+
+    <!--编辑我的资料-->
+    <string name="compile_title">编辑个人资料</string>
+    <string name="compile_upload_head">点击上传</string>
+    <string name="compile_user_id">账号</string>
+    <string name="compile_submit">提交</string>
+    <string name="compile_nickname">昵称</string>
+    <string name="compile_area">所在地</string>
+    <string name="compile_experience">收藏经验/年</string>
+    <string name="compile_shipping_address">收货地址</string>
+    <string name="compile_store">店铺</string>
+    <string name="compile_weixin_id">微信</string>
+    <string name="compile_qq_id">QQ</string>
+    <string name="compile_info_uncomplete">资料未完善</string>
+    <string name="compile_please_wait">请稍候...</string>
+
+    <!--首页-->
+    <string name="home_bottom_home">首页</string>
+    <string name="home_bottom_duobao">夺宝</string>
+    <string name="home_bottom_posted">发帖</string>
+    <string name="home_bottom_message">消息</string>
+    <string name="home_bottom_my">我的</string>
+    <string name="home_community">极藏社区</string>
+    <string name="home_design">原创设计</string>
+    <string name="home_interview">极藏专访</string>
+    <string name="home_classify">分类大全</string>
+    <string name="home_title">中金收藏</string>
+
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="unable_to_connect">Unable to connect to the server</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
