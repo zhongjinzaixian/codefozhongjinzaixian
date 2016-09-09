@@ -20,12 +20,12 @@ public class ViewHolder {
     private SparseArray<View> mViews;
     private int mPosition;
     private View mConvertView;
-    private Context mContext;
+    private Context context;
 
     public ViewHolder(Context context, ViewGroup parent,int layoutId,int position){
-            mContext = context;
-            mViews = new SparseArray<>();
-            mPosition = position;
+            this.context = context;
+            this.mViews = new SparseArray<>();
+            this.mPosition = position;
             mConvertView = LayoutInflater.from(context).inflate(layoutId,parent,false);
             mConvertView.setTag(this);
     }
@@ -39,10 +39,10 @@ public class ViewHolder {
      * @param position
      * @return
      */
-    public static ViewHolder getViewHolder(Context context,View convertView,ViewGroup parent,
-                                           int layoutId,int position){
+    public static ViewHolder getViewHolder(Context context,View convertView,
+                                           ViewGroup parent, int layoutId,int position){
         ViewHolder holder = null;
-        if (holder == null){
+        if (convertView == null){
             holder = new ViewHolder(context,parent,layoutId,position);
         }else {
             holder = (ViewHolder) convertView.getTag();
@@ -64,7 +64,9 @@ public class ViewHolder {
     public <T extends View>T getView(int viewId){
         View view = mViews.get(viewId);
         if (view == null){
-            mViews.put(viewId,mConvertView.findViewById(viewId));
+            view = mConvertView.findViewById(viewId);
+            mViews.put(viewId, view);
+            //mViews.put(viewId,mConvertView.findViewById(viewId));
         }
         return (T)view;
     }
@@ -113,10 +115,13 @@ public class ViewHolder {
      */
     public ViewHolder setImageUrl(int viewId,String url){
         ImageView imageView = getView(viewId);
-        Glide.with(mContext).
+        Glide.with(context).
                 load(url).
                 into(imageView);
        return this;
     }
 
+    public int getPosition() {
+        return mPosition;
+    }
 }
