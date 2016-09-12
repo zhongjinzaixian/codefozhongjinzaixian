@@ -111,6 +111,11 @@
     <string name="originality">匠心</string>
     <string name="inheritance">传承</string>
 
+    <!-- 极藏专访 -->
+    <string name="people_access">人物专访</string>
+    <string name="brand_access">品牌专访</string>
+    <string name="hidden_access">藏届专访</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

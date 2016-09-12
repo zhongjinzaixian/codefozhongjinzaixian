@@ -10,6 +10,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 import com.cnjy99.cyq.R;
 import com.cnjy99.cyq.adapter.DesignListViewAdapter;
+import com.cnjy99.cyq.utils.ImageUrls;
 import com.cnjy99.cyq.utils.MyBGABannerUtil;
 import com.zhy.autolayout.AutoRelativeLayout;
 import java.util.ArrayList;
@@ -31,13 +32,6 @@ public class SecondFragment extends BaseFragmet implements BGABanner.OnItemClick
     private SwipeRefreshLayout designSwipeRefreshLayout;
     private DesignListViewAdapter adapter;
 
-    private String[] imgArray = new String[]{
-            "http://img.taopic.com/uploads/allimg/140720/240467-140H00K62786.jpg",
-            "http://img5.imgtn.bdimg.com/it/u=3603943369,1952417318&fm=206&gp=0.jpg",
-            "http://image.tianjimedia.com/uploadImages/2012/011/R5J8A0HYL5YV.jpg",
-            "http://tupian.enterdesk.com/2013/mxy/12/10/15/3.jpg",
-            "http://imgstore.cdn.sogou.com/app/a/100540002/714860.jpg",
-    };
 
     public SecondFragment() {
     }
@@ -53,7 +47,7 @@ public class SecondFragment extends BaseFragmet implements BGABanner.OnItemClick
 
     public void initView(View view){
         mZoomStackBanner = (BGABanner) view.findViewById(R.id.banner_main_zoomStack);
-        setData(mZoomStackBanner);
+        ImageUrls.setData(mZoomStackBanner,getContext());
 
         culture_toys = (AutoRelativeLayout)view.findViewById(R.id.culture_toys);
         jewelry = (AutoRelativeLayout)view.findViewById(R.id.jewelry);
@@ -64,29 +58,14 @@ public class SecondFragment extends BaseFragmet implements BGABanner.OnItemClick
         designListView = (ListView)view.findViewById(R.id.designListView);
         designSwipeRefreshLayout = (SwipeRefreshLayout)view.findViewById(R.id.designSwipeRefreshLayout);
 
-        adapter = new DesignListViewAdapter(getContext(),getData(),R.layout.item_second);
+        adapter = new DesignListViewAdapter(getContext(), ImageUrls.getData(),R.layout.item_second);
         designListView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
         culture_toys.setSelected(true);
     }
-    public List<String> getData(){
-        List<String> list = new ArrayList<>();
-        for (int i = 0;i < imgArray.length; i++){
-            list.add(imgArray[i]);
-        }
-        return list;
-    }
 
-    public void setData(BGABanner bgaBanner){
-        List<String> urls = new ArrayList<>();
-        for (int i = 0;i<imgArray.length;i++){
-            urls.add(imgArray[i]);
-        }
-        List<View> views = MyBGABannerUtil.getItemImageView(getContext(),urls);
 
-        bgaBanner.setData(views);
-    }
 
     private void setListener() {
         mZoomStackBanner.setOnItemClickListener(this);

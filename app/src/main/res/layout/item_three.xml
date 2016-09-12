@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/access_head_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="10dp"
+        android:text="【人物专访*027期】李知弥：痴画着一片“桃花园”"/>
+
+    <TextView
+        android:id="@+id/access_time_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="2016-06-24"/>
+
+    <ImageView
+        android:id="@+id/access_imageView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/head_test"/>
+</com.zhy.autolayout.AutoLinearLayout>

@@ -47,4 +47,12 @@
         <item name="android:layout_marginRight">15dp</item>
         <item name="android:background">@drawable/center_design_selector</item>
     </style>
+    <!-- 极藏专访 -->
+    <style name="textStyleAccess">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+    </style>
 </resources>
