@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="26px"
     android:background="@color/white"
     android:layout_marginTop="30px">
 
-    <ImageView
-        android:src="@mipmap/ic_launcher"
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/headImageView"
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:src="@drawable/head_test"
         android:layout_marginRight="8dp"
-        android:scaleType="fitXY"/>
+        />
 
     <TextView
         android:text="昵称"

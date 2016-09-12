@@ -5,8 +5,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,8 +38,8 @@ public class HomeFragment extends BaseFragmet {
     private ViewPager viewPager;
 
     private String[] dataArray;
-    private int[] imgArray = {R.drawable.home_community_selector,R.drawable.bottom_msg_selector,
-            R.drawable.bottom_duobao_selector,R.drawable.bottom_home_selector};
+    private int[] imgArray = {R.drawable.home_community_selector,R.drawable.home_design_selector,
+            R.drawable.home_access_selector,R.drawable.home_type_selector};
 
     private FirstFragment firstFragment;
     private SecondFragment secondFragment;

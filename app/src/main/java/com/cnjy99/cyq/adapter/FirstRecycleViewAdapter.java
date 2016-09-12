@@ -25,6 +25,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 /**
  * Created by Administrator on 2016/9/8 0008.
  */
@@ -98,7 +100,7 @@ public class FirstRecycleViewAdapter extends RecyclerView.Adapter<FirstRecycleVi
 
     public class FirstViewHolder extends RecyclerView.ViewHolder{
 
-        ImageView headImageView;
+        CircleImageView headImageView;
         TextView nickTextView;
         TextView timeTextView;
         TextView contentTextView;
@@ -106,7 +108,7 @@ public class FirstRecycleViewAdapter extends RecyclerView.Adapter<FirstRecycleVi
 
         public FirstViewHolder(View itemView) {
             super(itemView);
-            headImageView = (ImageView)itemView.findViewById(R.id.headImageView);
+            headImageView = (CircleImageView)itemView.findViewById(R.id.headImageView);
             nickTextView = (TextView)itemView.findViewById(R.id.nickTextView);
             timeTextView = (TextView)itemView.findViewById(R.id.timeTextView);
             contentTextView = (TextView)itemView.findViewById(R.id.contentTextView);

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/designTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="17dp"
+        android:textSize="15dp"
+        android:text="标题"/>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/designHeadView"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#f5f5f5"
+        android:src="@drawable/head_test"
+        />
+    <ImageView
+        android:id="@+id/designImageView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/designHeadView"
+        android:src="@mipmap/ic_launcher"/>
+</com.zhy.autolayout.AutoRelativeLayout>

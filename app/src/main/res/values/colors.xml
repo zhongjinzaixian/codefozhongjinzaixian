@@ -66,4 +66,6 @@
     <color name="emojicon_tab_nomal">#ffffff</color>
 
     <color name="cut_line">#d2d2d2</color>
+    <color name="center_design">#f5f5f5</color>
+    <color name="design_listView_background">#ffffff</color>
 </resources>
