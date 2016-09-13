@@ -6,4 +6,12 @@
         <item>极藏专访</item>
         <item>分类大全</item>
     </string-array>
+
+    <string-array name="type_all">
+        <item>国石集市</item>
+        <item>热门分类</item>
+        <item>收藏分类</item>
+        <item>各省工美</item>
+        <item>仙游红木</item>
+    </string-array>
 </resources>

@@ -116,6 +116,8 @@
     <string name="brand_access">品牌专访</string>
     <string name="hidden_access">藏届专访</string>
     <string name="read_all">阅读全文</string>
+    <!-- 分类大全 -->
+    <string name="type_edt_hind">搜索标签</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
