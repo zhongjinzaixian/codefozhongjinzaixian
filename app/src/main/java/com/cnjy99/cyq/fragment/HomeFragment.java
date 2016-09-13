@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -85,7 +86,7 @@ public class HomeFragment extends BaseFragmet {
             }
 
             @Override
-            public IPagerTitleView getTitleView(Context context, final int index) {
+            public IPagerTitleView getTitleView(final Context context, final int index) {
                 CommonPagerTitleView commonPagerTitleView = new CommonPagerTitleView(getActivity());
                 commonPagerTitleView.setContentView(R.layout.layout_home_title_top);
                 // 初始化
@@ -93,16 +94,18 @@ public class HomeFragment extends BaseFragmet {
                 titleImg.setImageResource(imgArray[index]);
                 final TextView titleText = (TextView) commonPagerTitleView.findViewById(R.id.titleTextView);
                 titleText.setText(dataArray[index]);
-
+                titleText.setTextSize(14);
                 commonPagerTitleView.setOnPagerTitleChangeListener(new CommonPagerTitleView.OnPagerTitleChangeListener() {
                     @Override
                     public void onSelected(int index, int totalCount) {
-                        titleText.setTextColor(Color.RED);
+                        titleText.setTextColor(ContextCompat.getColor(context,R.color.access_text_color_sel));
+                        titleImg.setSelected(true);
                     }
 
                     @Override
                     public void onDeselected(int index, int totalCount) {
                         titleText.setTextColor(Color.BLACK);
+                        titleImg.setSelected(false);
                     }
 
                     @Override
