@@ -2,10 +2,12 @@ package com.cnjy99.cyq.adapter;
 
 import android.content.Context;
 import android.graphics.Point;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -78,7 +80,19 @@ public class TypeAdapter extends BaseAdapter {
         NestedScrollGridView typeGridView = holder.getView(R.id.typeGridView);
         typeGridView.setAdapter(adapter);
         adjustGridView(typeGridView,picImage.size());
+        gridViewListener(typeGridView);
         return holder.getConvertView();
+    }
+
+    public void gridViewListener(NestedScrollGridView typeGridView){
+        typeGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                TypeGridViewAdapter adapter = (TypeGridViewAdapter) parent.getAdapter();
+                adapter.getItem(position);
+            }
+        });
+
     }
 
     protected ViewHolder getViewHolder(int position,View convertView,ViewGroup parent){

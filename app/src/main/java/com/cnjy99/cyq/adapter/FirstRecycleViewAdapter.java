@@ -1,10 +1,10 @@
 package com.cnjy99.cyq.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Point;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.cnjy99.cyq.R;
+import com.cnjy99.cyq.activity.NameActivity;
 import com.cnjy99.cyq.utils.DisplayUtils;
 import com.cnjy99.cyq.utils.ImageUrls;
 import com.cnjy99.cyq.utils.LogUtil;
@@ -29,7 +30,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 /**
  * Created by Administrator on 2016/9/8 0008.
  */
-public class FirstRecycleViewAdapter extends RecyclerView.Adapter<FirstRecycleViewAdapter.FirstViewHolder>{
+public class FirstRecycleViewAdapter extends RecyclerView.Adapter<FirstRecycleViewAdapter.FirstViewHolder> implements View.OnClickListener{
 
     private Context context;
     private FragmentManager fragmentManager;
@@ -76,6 +77,9 @@ public class FirstRecycleViewAdapter extends RecyclerView.Adapter<FirstRecycleVi
         GridAdapter adapter = new GridAdapter(context, picList,R.layout.item_first_picture);
         holder.gridViewFirst.setAdapter(adapter);
         adjustGridView(holder.gridViewFirst,picList.size());
+
+        clickListener(holder);
+
     }
 
     public class FirstViewHolder extends RecyclerView.ViewHolder{
@@ -96,7 +100,23 @@ public class FirstRecycleViewAdapter extends RecyclerView.Adapter<FirstRecycleVi
         }
     }
 
-     class GridAdapter extends CommonAdapter<String> {
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()){
+            case R.id.headImageView:
+                context.startActivity(NameActivity.newInstance(context));
+                break;
+        }
+    }
+
+    public void clickListener(FirstViewHolder holder){
+        holder.headImageView.setOnClickListener(this);
+    }
+
+    class GridAdapter extends CommonAdapter<String> {
+
+        private ImageView gridImageView;
 
         public GridAdapter(Context context, List<String> mDatas, int itemLayoutId) {
             super(context, mDatas, itemLayoutId);
@@ -104,7 +124,7 @@ public class FirstRecycleViewAdapter extends RecyclerView.Adapter<FirstRecycleVi
 
         @Override
         public void convert(ViewHolder helper, String item) {
-            ImageView gridImageView = helper.getView(R.id.gridImageView);
+            gridImageView = helper.getView(R.id.gridImageView);
             adjustImageSize(gridImageView);
             Glide.with(mContext).load(item).into(gridImageView);
         }

@@ -17,6 +17,12 @@
             android:layout_height="57px"
             android:background="@drawable/nav_return"/>
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:visibility="gone"
+            android:text="首页"/>
+        <TextView
             android:textColor="@color/black"
             android:id="@+id/titleText"
             android:layout_width="match_parent"

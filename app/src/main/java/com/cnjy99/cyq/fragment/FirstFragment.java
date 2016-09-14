@@ -15,8 +15,6 @@ import com.cnjy99.cyq.R;
 import com.cnjy99.cyq.adapter.FirstRecycleViewAdapter;
 import com.cnjy99.cyq.utils.LogUtil;
 import com.cnjy99.cyq.utils.OnRecyclerViewScrollListener;
-import com.cnjy99.cyq.utils.ResultInterface;
-import com.lidroid.xutils.view.annotation.ViewInject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,12 +23,13 @@ import java.util.Random;
 /**
  *  极藏社区
  */
-public class FirstFragment extends BaseFragmet implements SwipeRefreshLayout.OnRefreshListener {
+public class FirstFragment extends BaseFragmet implements SwipeRefreshLayout.OnRefreshListener{
 
     private SwipeRefreshLayout refreshLayout;
     private RecyclerView recyclerView;
     private FirstRecycleViewAdapter adapter;
     private List<String> dataList = new ArrayList<>();
+
 
     //模拟数据长度
     private int demoCount=5;
@@ -103,6 +102,7 @@ public class FirstFragment extends BaseFragmet implements SwipeRefreshLayout.OnR
                 adapter.notifyDataSetChanged();
             }
         });
+
     }
 
     @Override

@@ -12,7 +12,7 @@
     <com.zhy.autolayout.AutoLinearLayout
         android:background="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="146px"
+        android:layout_height="120px"
         android:layout_gravity="center"
         android:gravity="center"
         android:orientation="horizontal">
