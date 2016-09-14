@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include android:id="@+id/name"
+        layout="@layout/view_title_top"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/cut_layout"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/item_headImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/head_test"
+            android:layout_centerHorizontal="true" />
+       <ImageView
+           android:id="@+id/item_attention"
+           android:layout_width="50dp"
+           android:layout_height="40dp"
+           android:layout_marginRight="20dp"
+           android:src="@drawable/btn_follow_nor"
+           android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:text="gg鱼儿"/>
+
+    <include android:id="@+id/name_include1"
+        layout="@layout/item_name_include1" />
+
+    <include android:id="@+id/name_include2"
+        layout="@layout/item_name_include2"/>
+
+</com.zhy.autolayout.AutoLinearLayout>
