@@ -10,6 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.cnjy99.cyq.R;
+import com.cnjy99.cyq.easemob.LoginActivity;
 import com.cnjy99.cyq.fragment.FiveFragment;
 import com.cnjy99.cyq.fragment.FourFragment;
 import com.cnjy99.cyq.fragment.HomeFragment;
@@ -149,9 +150,10 @@ public class MainActivity extends MyBaseActivity {
         myLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int index = layoutList.indexOf(myLayout);
+               /* int index = layoutList.indexOf(myLayout);
                 switchTab(index);
-                changeFragment(index);
+                changeFragment(index);*/
+                startActivity(LoginActivity.newInstance(MainActivity.this));
             }
         });
 
