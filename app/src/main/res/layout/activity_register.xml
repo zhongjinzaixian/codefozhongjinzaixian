@@ -36,7 +36,7 @@
         android:layout_marginTop="3dp"
         android:hint="密码"/>
     <Button
-        android:id="@+id/register_bt"
+        android:id="@+id/register_button"
         android:layout_width="350dp"
         android:layout_height="45dp"
         android:layout_marginTop="45dp"

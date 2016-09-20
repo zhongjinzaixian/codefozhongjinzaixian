@@ -1,5 +1,7 @@
 package com.cnjy99.cyq.activity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -54,6 +56,10 @@ public class MainActivity extends MyBaseActivity {
 
     private int currentTabIndex = -1;
     private long exitTime = 0;
+
+    public static Intent newInstance(Activity activity){
+        return new Intent(activity,MainActivity.class);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

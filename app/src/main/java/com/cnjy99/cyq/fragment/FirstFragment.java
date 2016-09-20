@@ -1,6 +1,8 @@
 package com.cnjy99.cyq.fragment;
 
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -35,9 +37,7 @@ public class FirstFragment extends BaseFragmet implements SwipeRefreshLayout.OnR
     private int demoCount=5;
     private int randomCount=0;
     public boolean isLoadData=true;
-
     private boolean isPrepared; //标志位，标志已经初始化完成
-
 
     public FirstFragment() {
     }

@@ -2,11 +2,9 @@ package com.cnjy99.cyq.fragment;
 
 
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,9 +17,7 @@ import com.cnjy99.cyq.R;
 import com.cnjy99.cyq.adapter.CommonAdapter;
 import com.cnjy99.cyq.utils.ImageUrls;
 import com.cnjy99.cyq.utils.ViewHolder;
-import com.lidroid.xutils.view.annotation.ViewInject;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
