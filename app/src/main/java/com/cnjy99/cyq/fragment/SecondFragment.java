@@ -6,6 +6,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.ListView;
 import android.widget.Toast;
 import com.cnjy99.cyq.R;
@@ -61,6 +62,17 @@ public class SecondFragment extends BaseFragmet implements BGABanner.OnItemClick
         adapter = new DesignListViewAdapter(getContext(), ImageUrls.getData(),R.layout.item_second);
         designListView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+        designListView.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+
+            }
+        });
 
         culture_toys.setSelected(true);
     }

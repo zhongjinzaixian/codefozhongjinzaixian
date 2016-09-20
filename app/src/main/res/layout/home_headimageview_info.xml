@@ -28,18 +28,25 @@
            android:src="@drawable/btn_follow_nor"
            android:layout_alignParentEnd="true" />
     </RelativeLayout>
-    
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"
+        android:textColor="#2b2b2b"
         android:text="gg鱼儿"/>
 
     <include android:id="@+id/name_include1"
         layout="@layout/item_name_include1" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/line"/>
+
     <include android:id="@+id/name_include2"
-        layout="@layout/item_name_include2"/>
+        layout="@layout/item_name_include2"
+        />
 
 </com.zhy.autolayout.AutoLinearLayout>

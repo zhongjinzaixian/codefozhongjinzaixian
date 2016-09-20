@@ -8,12 +8,12 @@
         "source": "E:\\NewWorkSpace\\CangCircle\\magicindicator\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\abc_action_bar_up_container.xml"
     },
     {
-        "merged": "E:\\NewWorkSpace\\CangCircle\\magicindicator\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
-        "source": "E:\\NewWorkSpace\\CangCircle\\magicindicator\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\abc_alert_dialog_material.xml"
-    },
-    {
         "merged": "E:\\NewWorkSpace\\CangCircle\\magicindicator\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
         "source": "E:\\NewWorkSpace\\CangCircle\\magicindicator\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "E:\\NewWorkSpace\\CangCircle\\magicindicator\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "E:\\NewWorkSpace\\CangCircle\\magicindicator\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
         "merged": "E:\\NewWorkSpace\\CangCircle\\magicindicator\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",

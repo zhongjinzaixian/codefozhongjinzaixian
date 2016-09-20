@@ -172,7 +172,7 @@ public class MainActivity extends MyBaseActivity {
                 Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();
                 exitTime = System.currentTimeMillis();
             } else {
-                myApplication.getActivityManager().popAllActivityExceptOne();
+               // myApplication.getActivityManager().popAllActivityExceptOne();
                 finish();
             }
             return true;

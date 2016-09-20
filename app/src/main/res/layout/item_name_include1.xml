@@ -7,8 +7,7 @@
     <LinearLayout
         style="@style/include1">
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/include1_nameText"
             android:text="@string/supported"/>
         <TextView
             style="@style/include1_text"/>
@@ -21,8 +20,7 @@
     <LinearLayout
         style="@style/include1">
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/include1_nameText"
             android:text="@string/attention"/>
         <TextView
             style="@style/include1_text"/>
@@ -35,8 +33,7 @@
     <LinearLayout
         style="@style/include1">
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/include1_nameText"
             android:text="@string/fans"/>
         <TextView
             style="@style/include1_text"/>

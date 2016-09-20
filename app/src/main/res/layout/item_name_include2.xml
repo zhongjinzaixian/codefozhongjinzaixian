@@ -1,18 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="40dp"
-    android:layout_gravity="center"
-    android:gravity="center">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+    <net.lucode.hackware.magicindicator.MagicIndicator
+        android:id="@+id/name_magicIndicator"
+        android:layout_width="160dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/line"/>
 
-    <TextView
-        style="@style/include2_text"
-        android:text="@string/dynamic"/>
-    <TextView
-        style="@style/include2_text"
-        android:text="@string/market"/>
-    <TextView
-        style="@style/include2_text"
-        android:text="@string/collection"/>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/name_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
+    <!--<LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_gravity="center"
+        >
+        <TextView
+            style="@style/include2_text"
+            android:text="@string/dynamic"/>
+        <TextView
+            style="@style/include2_text"
+            android:text="@string/market"/>
+        <TextView
+            style="@style/include2_text"
+            android:text="@string/collection"/>
+    </LinearLayout>-->
 </com.zhy.autolayout.AutoLinearLayout>

@@ -72,7 +72,7 @@ public abstract class MyBaseActivity extends AppCompatActivity{
         super.onDestroy();
         LogUtil.e("----------onDestroy--------------");
         netRequestUtil = null;
-        myApplication.getActivityManager().popActivity(this);
+      // myApplication.getActivityManager().popActivity(this);
     }
 
     public void initTiTle(){
