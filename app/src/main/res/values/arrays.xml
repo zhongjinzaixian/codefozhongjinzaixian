@@ -20,4 +20,9 @@
         <item>集市</item>
         <item>收藏</item>
     </string-array>
+
+    <string-array name="chat_top_text">
+        <item>会话</item>
+        <item>联系人</item>
+    </string-array>
 </resources>

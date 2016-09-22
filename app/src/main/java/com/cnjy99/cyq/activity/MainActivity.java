@@ -22,6 +22,9 @@ import com.cnjy99.cyq.fragment.SecondFragment;
 import com.cnjy99.cyq.fragment.SendFragment;
 import com.cnjy99.cyq.fragment.SnatchFragment;
 import com.cnjy99.cyq.fragment.ThreeFragment;
+import com.cnjy99.cyq.utils.LogUtil;
+import com.hyphenate.chat.EMConversation;
+import com.hyphenate.easeui.ui.EaseConversationListFragment;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.zhy.autolayout.AutoRelativeLayout;
@@ -43,12 +46,16 @@ public class MainActivity extends MyBaseActivity {
     private AutoRelativeLayout postedLayout;
     @ViewInject(R.id.myLayout)
     private AutoRelativeLayout myLayout;
+    @ViewInject(R.id.topLayout)
+    private AutoRelativeLayout layout;
 
     private HomeFragment homeFragment;
     private SnatchFragment snatchFragment;
     private SendFragment sendFragment;
     private MessageFragment messageFragment;
     private MyCommunityInfoFragment myCommunityInfoFragment;
+
+    //private EaseConversationListFragment easeConversationListFragment;
 
     private ArrayList<RelativeLayout> layoutList = new ArrayList<>();
     private ArrayList<Fragment> fragmentList=new ArrayList<>();
@@ -97,10 +104,13 @@ public class MainActivity extends MyBaseActivity {
         messageFragment=new MessageFragment();
         myCommunityInfoFragment=new MyCommunityInfoFragment();
 
+        //easeConversationListFragment = new EaseConversationListFragment();
+
         fragmentList.add(homeFragment);
         fragmentList.add(snatchFragment);
         fragmentList.add(sendFragment);
         fragmentList.add(messageFragment);
+        //fragmentList.add(easeConversationListFragment);
         fragmentList.add(myCommunityInfoFragment);
 
         if (transaction != null){
@@ -132,6 +142,7 @@ public class MainActivity extends MyBaseActivity {
                 int index = layoutList.indexOf(homeLayout);
                 switchTab(index);
                 changeFragment(index);
+                layout.setVisibility(View.VISIBLE);
             }
         });
 
@@ -141,6 +152,16 @@ public class MainActivity extends MyBaseActivity {
                 int index = layoutList.indexOf(msgLayout);
                 switchTab(index);
                 changeFragment(index);
+
+                layout.setVisibility(View.GONE);
+               /* EaseConversationListFragment easeConversationListFragment = new EaseConversationListFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,easeConversationListFragment);
+                easeConversationListFragment.setConversationListItemClickListener(new EaseConversationListFragment.EaseConversationListItemClickListener() {
+                    @Override
+                    public void onListItemClicked(EMConversation conversation) {
+                        LogUtil.toastMsg(MainActivity.this,"123");
+                    }
+                });*/
             }
         });
 
@@ -150,16 +171,18 @@ public class MainActivity extends MyBaseActivity {
                 int index = layoutList.indexOf(duobaoLayout);
                 switchTab(index);
                 changeFragment(index);
+                layout.setVisibility(View.VISIBLE);
             }
         });
 
         myLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               /* int index = layoutList.indexOf(myLayout);
+                int index = layoutList.indexOf(myLayout);
                 switchTab(index);
-                changeFragment(index);*/
-                startActivity(LoginActivity.newInstance(MainActivity.this));
+                changeFragment(index);
+                layout.setVisibility(View.VISIBLE);
+                //startActivity(LoginActivity.newInstance(MainActivity.this));
             }
         });
 
@@ -169,6 +192,7 @@ public class MainActivity extends MyBaseActivity {
                 int index = layoutList.indexOf(postedLayout);
                 switchTab(index);
                 changeFragment(index);
+                layout.setVisibility(View.VISIBLE);
             }
         });
     }

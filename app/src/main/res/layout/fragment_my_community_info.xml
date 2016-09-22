@@ -1,13 +1,24 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.cnjy99.cyq.fragment.MyCommunityInfoFragment">
+    tools:context="com.cnjy99.cyq.fragment.MyCommunityInfoFragment"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:text="我的社区信息" />
+    <Button
+        android:id="@+id/test_downLine"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="下线测试"
+        />
+    <Button
+        android:id="@+id/add_fr"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="添加好友"/>
 
-</FrameLayout>
+</com.zhy.autolayout.AutoLinearLayout>
