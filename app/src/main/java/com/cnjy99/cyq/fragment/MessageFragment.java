@@ -1,16 +1,19 @@
 package com.cnjy99.cyq.fragment;
 
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.cnjy99.cyq.R;
 import com.cnjy99.cyq.adapter.ChatFragmentPagerAdapter;
@@ -18,7 +21,6 @@ import com.cnjy99.cyq.easemob.ChatActivity;
 import com.cnjy99.cyq.easemob.listener.MyConnectionListener;
 import com.cnjy99.cyq.easemob.runtimepermissions.PermissionsManager;
 import com.cnjy99.cyq.easemob.runtimepermissions.PermissionsResultAction;
-import com.cnjy99.cyq.utils.LogUtil;
 import com.hyphenate.EMContactListener;
 import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
@@ -31,11 +33,15 @@ import com.hyphenate.easeui.ui.EaseConversationListFragment;
 import com.hyphenate.exceptions.HyphenateException;
 
 import net.lucode.hackware.magicindicator.MagicIndicator;
+import net.lucode.hackware.magicindicator.ViewPagerHelper;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNavigatorAdapter;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerIndicator;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTitleView;
-import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.CommonPagerTitleView;
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.indicators.LinePagerIndicator;
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.ColorTransitionPagerTitleView;
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.SimplePagerTitleView;
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.badge.BadgePagerTitleView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -52,6 +58,7 @@ public class MessageFragment extends BaseFragmet {
     private EaseConversationListFragment easeConversationListFragment;
     private EaseContactListFragment easeContactListFragment;
     private EMMessageListener emMessageListener;
+    private ImageView message_add_img;
 
     private List<Fragment> fragmentList = new ArrayList<>();
     private String[] dataArray;
@@ -125,6 +132,18 @@ public class MessageFragment extends BaseFragmet {
 
         chat_viewPager = (ViewPager)view.findViewById(R.id.chat_viewPager);
         chat_indicator = (MagicIndicator)view.findViewById(R.id.chat_indicator);
+
+        message_add_img = (ImageView)view.findViewById(R.id.message_add_img);
+
+        /**
+         * 添加好友
+         */
+        message_add_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addFriend();
+            }
+        });
         /**
          * 会话界面
          */
@@ -132,7 +151,7 @@ public class MessageFragment extends BaseFragmet {
         easeConversationListFragment.setConversationListItemClickListener(new EaseConversationListFragment.EaseConversationListItemClickListener() {
             @Override
             public void onListItemClicked(EMConversation conversation) {
-
+                startActivity(ChatActivity.newInstance(getActivity()).putExtra(EaseConstant.EXTRA_USER_ID, conversation.getUserName()));
             }
         });
         /**
@@ -166,8 +185,6 @@ public class MessageFragment extends BaseFragmet {
         chat_viewPager.setAdapter(adapter);
 
         CommonNavigator commonNavigator = new CommonNavigator(getActivity());
-        commonNavigator.setAdjustMode(true);
-        commonNavigator.setSkimOver(true);
         commonNavigator.setAdapter(new CommonNavigatorAdapter() {
             @Override
             public int getCount() {
@@ -176,65 +193,36 @@ public class MessageFragment extends BaseFragmet {
 
             @Override
             public IPagerTitleView getTitleView(final Context context,final int index) {
-                CommonPagerTitleView commonPagerTitleView = new CommonPagerTitleView(getActivity());
-                commonPagerTitleView.setContentView(R.layout.chat_layout_top);
-                // 初始化
-                final TextView titleText = (TextView) commonPagerTitleView.findViewById(R.id.chat_top_text);
-                titleText.setText(dataArray[index]);
 
-                commonPagerTitleView.setOnPagerTitleChangeListener(new CommonPagerTitleView.OnPagerTitleChangeListener() {
-                    @Override
-                    public void onSelected(int index, int totalCount) {
-                        titleText.setTextColor(ContextCompat.getColor(context,R.color.access_text_color_sel));
-                    }
-
-                    @Override
-                    public void onDeselected(int index, int totalCount) {
-                        titleText.setTextColor(Color.BLACK);
-                    }
-
-                    @Override
-                    public void onLeave(int index, int totalCount, float leavePercent, boolean leftToRight) {
-
-                    }
-
-                    @Override
-                    public void onEnter(int index, int totalCount, float enterPercent, boolean leftToRight) {
-
-                    }
-                });
-                commonPagerTitleView.setOnClickListener(new View.OnClickListener() {
+                BadgePagerTitleView badgePagerTitleView = new BadgePagerTitleView(getActivity());
+                // badgePagerTitleView.setBackground();
+                SimplePagerTitleView simplePagerTitleView = new ColorTransitionPagerTitleView(context);
+                simplePagerTitleView.setText(dataArray[index]);
+                simplePagerTitleView.setTextSize(20);
+                simplePagerTitleView.setNormalColor(Color.parseColor("#b3b3b3"));
+                simplePagerTitleView.setSelectedColor(Color.parseColor("#2b2b2b"));
+                simplePagerTitleView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         chat_viewPager.setCurrentItem(index);
                     }
                 });
-                return commonPagerTitleView;
+                badgePagerTitleView.setInnerPagerTitleView(simplePagerTitleView);
+
+                return badgePagerTitleView;
             }
 
             @Override
             public IPagerIndicator getIndicator(Context context) {
-                return null;
+                LinePagerIndicator indicator = new LinePagerIndicator(context);
+                indicator.setMode(LinePagerIndicator.MODE_WRAP_CONTENT);
+                indicator.setColors(Color.parseColor("#40c4ff"));
+                return indicator;
             }
         });
 
         chat_indicator.setNavigator(commonNavigator);
-        chat_viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                chat_indicator.onPageScrolled(position,positionOffset,positionOffsetPixels);
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                chat_indicator.onPageSelected(position);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-                chat_indicator.onPageScrollStateChanged(state);
-            }
-        });
+        ViewPagerHelper.bind(chat_indicator, chat_viewPager);
     }
 
     public void friendState(){
@@ -292,5 +280,50 @@ public class MessageFragment extends BaseFragmet {
             e.printStackTrace();
         }
         return map;
+    }
+
+
+    /**
+     * 添加好友
+     */
+    private void addFriend() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("添加好友");
+        final EditText newFriendName = new EditText(getActivity());
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        newFriendName.setLayoutParams(layoutParams);
+        newFriendName.setHint("新好友用户名");
+        builder.setView(newFriendName);
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.setPositiveButton("添加", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                new Thread() {
+                    @Override
+                    public void run() {
+                        String friendName = newFriendName.getText().toString().trim();
+                        try {
+                            EMClient.getInstance().contactManager().addContact(friendName, "我是你的朋友");
+                            //  KLog.e("添加好友成功,等待回应:" + friendName);
+                        } catch (HyphenateException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }.start();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        EMClient.getInstance().chatManager().removeMessageListener(emMessageListener);
     }
 }

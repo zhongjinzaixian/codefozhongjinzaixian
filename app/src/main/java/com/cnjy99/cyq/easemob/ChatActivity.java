@@ -13,8 +13,6 @@ import com.hyphenate.easeui.ui.EaseChatFragment;
 
 public class ChatActivity extends AppCompatActivity {
 
-    private EaseChatFragment chatFragment;
-
     public static Intent newInstance(Activity activity){
         return new Intent(activity,ChatActivity.class);
     }

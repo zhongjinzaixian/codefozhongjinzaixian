@@ -3,18 +3,33 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.zhy.autolayout.AutoLinearLayout
+    <RelativeLayout
         android:background="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="80px"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="100px"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"/>
+
         <net.lucode.hackware.magicindicator.MagicIndicator
             android:id="@+id/chat_indicator"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </com.zhy.autolayout.AutoLinearLayout>
+            android:layout_width="120dp"
+            android:layout_gravity="center"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:id="@+id/message_add_img"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/icon_add"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/chat_viewPager"
