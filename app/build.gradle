@@ -42,6 +42,7 @@ dependencies {
     compile project(':magicindicator')
     //compile group: 'com.github.bumptech.glide', name: 'glide', version: '3.7.0'
     compile project(':easeUI');
+    //compile project(':redpacketlibrary');
     //compile 'com.android.support:appcompat-v7:24.2.0'
     compile 'com.android.support:recyclerview-v7:24.2.0'
     compile 'de.hdodenhof:circleimageview:2.1.0'

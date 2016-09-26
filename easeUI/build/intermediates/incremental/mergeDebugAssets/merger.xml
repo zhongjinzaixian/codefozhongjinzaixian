@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="E:\NewWorkSpace\CangCircle\easeUI\src\main\assets"/><source path="E:\NewWorkSpace\CangCircle\easeUI\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="E:\NewWorkSpace\CangCircle\easeUI\src\debug\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="E:\NewWorkSpace\CangCircle\easeUI\assets"/><source path="E:\NewWorkSpace\CangCircle\easeUI\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="E:\NewWorkSpace\CangCircle\easeUI\build-types\debug\assets"/></dataSet></merger>
