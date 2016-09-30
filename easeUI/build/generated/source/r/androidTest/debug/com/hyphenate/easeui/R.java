@@ -567,7 +567,6 @@ public final class R {
 		public static final int agree = 0x7f060016;
 		public static final int all_members = 0x7f0600ca;
 		public static final int answer = 0x7f060017;
-		public static final int app_name = 0x7f06012c;
 		public static final int are_empty_group_of_news = 0x7f0600cb;
 		public static final int attach_file = 0x7f060018;
 		public static final int attach_location = 0x7f060019;
@@ -660,7 +659,7 @@ public final class R {
 		public static final int is_down_please_wait = 0x7f060045;
 		public static final int is_modify_the_group_name = 0x7f0600f7;
 		public static final int is_quit_the_group_chat = 0x7f0600f8;
-		public static final int join_public_group = 0x7f06012d;
+		public static final int join_public_group = 0x7f06012c;
 		public static final int list_is_for = 0x7f0600f9;
 		public static final int location_message = 0x7f060046;
 		public static final int location_prefix = 0x7f060047;

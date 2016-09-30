@@ -543,7 +543,6 @@ int string address_book 0x7f060015
 int string agree 0x7f060016
 int string all_members 0x7f0600ca
 int string answer 0x7f060017
-int string app_name 0x7f06012c
 int string are_empty_group_of_news 0x7f0600cb
 int string attach_file 0x7f060018
 int string attach_location 0x7f060019
@@ -636,7 +635,7 @@ int string input_new_nick_hint 0x7f0600f6
 int string is_down_please_wait 0x7f060045
 int string is_modify_the_group_name 0x7f0600f7
 int string is_quit_the_group_chat 0x7f0600f8
-int string join_public_group 0x7f06012d
+int string join_public_group 0x7f06012c
 int string list_is_for 0x7f0600f9
 int string location_message 0x7f060046
 int string location_prefix 0x7f060047
